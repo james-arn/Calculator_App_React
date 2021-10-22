@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { create, all } from 'mathjs'
+import { evaluate } from 'mathjs'
 
 const App = ()=>{
-  // collection of tasks, need an array.
   const [input, setInput] = useState("")
+  const [result, setResult] = useState("")
 
   const buttons = [
     "7", "8", "9", "C",
@@ -13,23 +13,23 @@ const App = ()=>{
   ]
 
   const addHandler = (button) =>{
-console.log(button)
-let newArr = [...input]
-newArr.push(input)
-console.log(newArr)
-setInput(newArr)
-// math.evaluate(newArr)
+setInput(input + button);
+if (button === "=") {
+  setResult(evaluate(input));
+  setInput(result)
+} else if (button === "C") {
+  setInput("")
+  setResult("")
 }
-//concat untilclick equals which will then evaluate (add). Then the c will clear string.
-// IF user todenst lcick on c or equals then it adds to input.
-
-
-  
-  // math.evaluate('12 /')
+}
 
   return (
     <div>
       <h1>Calculator</h1>
+      <div className="display">
+      <h2>{result || "0"}</h2>
+      ({input || "0"})
+      </div>
     {buttons.map ((item, index)=>{
       return (
       <button key={index} value={item} onClick={()=>addHandler(item)} >{item}</button>
