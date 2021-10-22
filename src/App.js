@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { evaluate } from 'mathjs'
+import "../src/index.css"
 
 const App = ()=>{
   const [input, setInput] = useState("")
   const [result, setResult] = useState("")
+
 
   const buttons = [
     "7", "8", "9", "C",
@@ -16,7 +18,7 @@ const App = ()=>{
 setInput(input + button);
 if (button === "=") {
   setResult(evaluate(input));
-  setInput(result)
+setInput(input)
 } else if (button === "C") {
   setInput("")
   setResult("")
@@ -24,7 +26,7 @@ if (button === "=") {
 }
 
   return (
-    <div>
+    <div className="container">
       <h1>Calculator</h1>
       <div className="display">
       <h2>{result || "0"}</h2>
