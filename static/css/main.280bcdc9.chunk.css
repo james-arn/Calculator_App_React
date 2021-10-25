@@ -1,0 +1,2 @@
+:root{--primary:teal;--secondary:purple;--dark:#131a26;--light:#eee}*{text-align:center;margin:0;padding:20px;box-sizing:border-box;font-family:"Fira Sans",sans-serif}body{background-color:#eee;background-color:var(--light)}.App{display:flex;min-height:100vh;align-items:center;justify-content:center}
+/*# sourceMappingURL=main.280bcdc9.chunk.css.map */
