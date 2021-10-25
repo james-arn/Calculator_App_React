@@ -32,9 +32,9 @@ setInput(input)
       <h2>{result || "0"}</h2>
       ({input || "0"})
       </div>
-    {buttons.map ((item, index)=>{
+    {buttons.map ((button, index)=>{
       return (
-      <button key={index} value={item} onClick={()=>addHandler(item)} >{item}</button>
+      <button key={index} value={button} onClick={()=>addHandler(button)} >{button}</button>
     )}) }
     </div>
   )
